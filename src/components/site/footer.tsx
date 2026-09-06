@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { socialLinks } from '@/lib/content'
 import type { SiteSettings } from '@/lib/types'
 import { FacebookIcon, TiktokIcon, YoutubeIcon } from '@/components/ui/icons'
@@ -37,12 +36,6 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
               </a>
             )
           })}
-          <Link
-            href="/admin"
-            className="mr-2 text-xs font-semibold text-ink-400 transition hover:text-gold-700"
-          >
-            لوحة التحكم
-          </Link>
         </div>
       </div>
     </footer>
