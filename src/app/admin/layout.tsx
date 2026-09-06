@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { requireAdmin } from '@/lib/auth'
 import { signOutAction } from '@/lib/actions/auth'
@@ -25,12 +26,13 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <header className="border-b border-hairline bg-white">
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-6 py-4">
           <div className="flex items-center gap-2.5">
-            <span
-              aria-hidden
-              className="grid h-8 w-8 place-items-center rounded-lg bg-gold-500 text-sm font-extrabold text-ink-900"
-            >
-              ع
-            </span>
+            <Image
+              src="/logo.webp"
+              alt=""
+              width={76}
+              height={65}
+              className="h-8 w-auto"
+            />
             <span className="font-extrabold text-ink-900">لوحة التحكم</span>
           </div>
 

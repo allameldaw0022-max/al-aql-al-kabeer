@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import type { SiteSettings } from '@/lib/types'
 
@@ -14,12 +15,14 @@ export function SiteHeader({ settings }: { settings: SiteSettings }) {
     <header className="sticky top-0 z-40 border-b border-hairline bg-canvas/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link href="/" className="flex items-center gap-2.5">
-          <span
-            aria-hidden
-            className="grid h-9 w-9 place-items-center rounded-lg bg-gold-500 text-base font-extrabold text-ink-900"
-          >
-            ع
-          </span>
+          <Image
+            src="/logo.webp"
+            alt=""
+            width={94}
+            height={80}
+            priority
+            className="h-10 w-auto"
+          />
           <span className="text-lg font-extrabold text-ink-900">{settings.brand_name}</span>
         </Link>
 

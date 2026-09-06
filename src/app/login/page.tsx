@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { LoginForm } from '@/components/admin/login-form'
 
 export const metadata: Metadata = {
@@ -17,12 +18,14 @@ export default async function LoginPage({
     <main className="mx-auto flex min-h-dvh max-w-md flex-col justify-center px-6 py-12">
       <div className="rounded-card bg-white p-8 shadow-lift ring-1 ring-hairline">
         <div className="mb-7 text-center">
-          <span
-            aria-hidden
-            className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-xl bg-gold-500 text-xl font-extrabold text-ink-900"
-          >
-            ع
-          </span>
+          <Image
+            src="/logo.webp"
+            alt=""
+            width={132}
+            height={112}
+            priority
+            className="mx-auto mb-4 h-14 w-auto"
+          />
           <h1 className="text-xl font-extrabold text-ink-900">لوحة تحكم العقل الكبير</h1>
           <p className="mt-1 text-sm text-ink-600">سجّل الدخول لتحديث محتوى الموقع</p>
         </div>

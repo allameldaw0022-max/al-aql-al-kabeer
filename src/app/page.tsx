@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import {
   deckUrl,
   getBlocks,
@@ -45,9 +46,18 @@ export default async function HomePage() {
             <p className="mb-4 inline-block rounded-full bg-gold-100 px-4 py-1.5 text-sm font-bold text-gold-800">
               {settings.brand_tagline}
             </p>
+            {/* الشعار يحمل اسم العلامة مرسوماً، فيقوم مقام النص بصرياً —
+                و alt يبقي الاسم متاحاً للقارئ الآلي ولمحركات البحث. */}
             <h1 className="text-4xl font-extrabold leading-tight text-ink-900 sm:text-6xl">
-              {settings.brand_name}
-              <span className="mt-2 block text-2xl font-bold text-gold-700 sm:text-3xl">
+              <Image
+                src="/logo.webp"
+                alt={settings.brand_name}
+                width={414}
+                height={351}
+                priority
+                className="mx-auto h-32 w-auto sm:h-44"
+              />
+              <span className="mt-5 block text-2xl font-bold text-gold-700 sm:text-3xl">
                 {settings.hero_title}
               </span>
             </h1>
