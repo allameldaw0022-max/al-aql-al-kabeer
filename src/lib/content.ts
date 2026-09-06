@@ -148,13 +148,11 @@ export function formatWhatsapp(number: string | null): string | null {
   return `+${number.replace(/(\d{3})(?=\d)/g, '$1 ').trim()}`
 }
 
-/** الرابط العام لملف الرعاية داخل التخزين. */
+/**
+ * رابط ملف الرعاية على نطاق الموقع نفسه.
+ * المسار /deck يجلب الملف من Supabase على الخادم ويمرّره للزائر، فلا يظهر
+ * نطاق التخزين في شريط العنوان. يُرجع null إذا لم يُرفع ملف بعد.
+ */
 export function deckUrl(settings: SiteSettings): string | null {
-  if (!settings.deck_path) return null
-  const base = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, '')
-  if (!base) return null
-  const version = settings.deck_updated_at
-    ? `?v=${Date.parse(settings.deck_updated_at)}`
-    : ''
-  return `${base}/storage/v1/object/public/sponsorship/${settings.deck_path}${version}`
+  return settings.deck_path ? '/deck' : null
 }
