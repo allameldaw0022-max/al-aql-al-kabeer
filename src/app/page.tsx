@@ -8,6 +8,7 @@ import {
   whatsappHref,
 } from '@/lib/content'
 import { SiteHeader } from '@/components/site/header'
+import { SmoothAnchors } from '@/components/site/smooth-anchors'
 import { SiteFooter } from '@/components/site/footer'
 import { ContactBlock } from '@/components/site/contact'
 import { Section, StatCard } from '@/components/site/sections'
@@ -37,6 +38,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <SmoothAnchors />
       <SiteHeader settings={settings} />
 
       <main>
